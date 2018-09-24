@@ -1,0 +1,39 @@
+{
+  "name": "Kitware@SC18",
+  "version": "0.0.0-semantically-release",
+  "description": "SuperComputing demos",
+  "keywords": [
+    "3d",
+    "visualization",
+    "vtk",
+    "paraview"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kitware/SC18.git"
+  },
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/kitware/SC!*/issues"
+  },
+  "homepage": "https://github.com/kitware/SC18#readme",
+  "dependencies": {
+    "vtk-js": "7.11.0"
+  },
+  "devDependencies": {
+    "kw-doc": "1.2.0",
+    "kw-web-suite": "6.1.0"
+  },
+  "scripts": {
+    "reformat": "prettier --config ./prettier.config.js --write \"Sources/**/*.js\" \"Examples/**/*.js\"",
+    "build": "webpack --progress --colors --mode development",
+    "build:release": "webpack --progress --colors --mode production",
+    "commit": "git cz",
+    "semantic-release": "semantic-release"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+}
