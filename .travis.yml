@@ -5,8 +5,6 @@ dist: trusty
 group: travis_lts
 node_js:
   - '9.3.0'
-install:
-  - npm ci
 notifications:
   email:
     recipients:
