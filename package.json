@@ -25,7 +25,7 @@
     "kw-web-suite": "6.1.0"
   },
   "scripts": {
-    "deploy": "gh-pages -d website",
+    "deploy": "gh-pages -d website --repo https://${GH_TOKEN}@github.com/Kitware/SC18.git --user \"Sebastien Jourdain <sebastien.jourdain@kitware.com>\"",
     "start": "webpack-dev-server --mode development --progress --colors",
     "reformat": "prettier --config ./prettier.config.js --write \"demos/**/*.js\"",
     "build": "webpack --progress --colors --mode development",

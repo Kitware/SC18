@@ -17,9 +17,6 @@ cache:
     - "$HOME/.npm"
 
 script:
-  - git config --global user.name "Travis CI"
-  - git config --global user.email "sebastien.jourdain@kitware.com"
-  - export GIT_PUBLISH_URL=https://${GH_TOKEN}@github.com/Kitware/SC18.git
   - npm run build:release
   - cp -r ./data/* ./website/
   - npm run deploy
