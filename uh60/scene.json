@@ -1,0 +1,251 @@
+{
+  "settings": {
+    "background": [0.3, 0.4, 0.5],
+    "camera": {
+      "focalPoint": [
+        0.010805010795593139, -3.147214889526367,
+        0.5229400396347054
+      ],
+      "position": [-11.195454152400318, 28.41188595658932, 9.47247491145571],
+      "viewUp": [0, 0, 1]
+    }
+  },
+  "objects": [{
+      "file": "Material__25_0.vtp",
+      "texture": {
+        "file": "Material__25.jpg"
+      }
+    },
+    {
+      "file": "Material__25_1.vtp",
+      "texture": {
+        "file": "Material__25.jpg"
+      }
+    },
+    {
+      "file": "Material__25_2.vtp",
+      "texture": {
+        "file": "Material__25.jpg"
+      }
+    },
+    {
+      "file": "Material__25_3.vtp",
+      "texture": {
+        "file": "Material__25.jpg"
+      }
+    },
+    {
+      "file": "Material__25_4.vtp",
+      "texture": {
+        "file": "Material__25.jpg"
+      }
+    },
+    {
+      "file": "Material__25_5.vtp",
+      "texture": {
+        "file": "Material__25.jpg"
+      }
+    },
+    {
+      "file": "Material__25_6.vtp",
+      "texture": {
+        "file": "Material__25.jpg"
+      }
+    },
+    {
+      "file": "Material__25_7.vtp",
+      "texture": {
+        "file": "Material__25.jpg"
+      }
+    },
+    {
+      "file": "Material__25_8.vtp",
+      "texture": {
+        "file": "Material__25.jpg"
+      }
+    },
+    {
+      "file": "Material__25_9.vtp",
+      "texture": {
+        "file": "Material__25.jpg"
+      }
+    },
+    {
+      "file": "Material__25_10.vtp",
+      "texture": {
+        "file": "Material__25.jpg"
+      }
+    },
+    {
+      "file": "Material__25_11.vtp",
+      "texture": {
+        "file": "Material__25.jpg"
+      }
+    },
+    {
+      "file": "Material__25_12.vtp",
+      "texture": {
+        "file": "Material__25.jpg"
+      }
+    },
+    {
+      "file": "Material__26_0.vtp",
+      "opacity": 0.43,
+      "color": [0.0470588, 0.141176, 0.196078]
+    },
+    {
+      "file": "Material__26_1.vtp",
+      "opacity": 0.43,
+      "color": [0.0470588, 0.141176, 0.196078]
+    },
+    {
+      "file": "Material__26_2.vtp",
+      "opacity": 0.43,
+      "color": [0.0470588, 0.141176, 0.196078]
+    },
+    {
+      "file": "Material__26_3.vtp",
+      "opacity": 0.43,
+      "color": [0.0470588, 0.141176, 0.196078]
+    },
+    {
+      "file": "Material__26_4.vtp",
+      "opacity": 0.43,
+      "color": [0.0470588, 0.141176, 0.196078]
+    },
+    {
+      "file": "Material__26_5.vtp",
+      "opacity": 0.43,
+      "color": [0.0470588, 0.141176, 0.196078]
+    },
+    {
+      "file": "Material__26_6.vtp",
+      "opacity": 0.43,
+      "color": [0.0470588, 0.141176, 0.196078]
+    },
+    {
+      "file": "Material__26_7.vtp",
+      "opacity": 0.43,
+      "color": [0.0470588, 0.141176, 0.196078]
+    },
+    {
+      "file": "Material__26_8.vtp",
+      "opacity": 0.43,
+      "color": [0.0470588, 0.141176, 0.196078]
+    },
+    {
+      "file": "Material__26_9.vtp",
+      "opacity": 0.43,
+      "color": [0.0470588, 0.141176, 0.196078]
+    },
+    {
+      "file": "Material__28.vtp",
+      "texture": {
+        "file": "Material__28.jpg"
+      }
+    },
+    {
+      "file": "backRotor.vtp",
+      "color": [0.1, 0.1, 0.1],
+      "action": {
+        "type": "twirl",
+        "rate": 12,
+        "rotation": [1, 0, 0]
+      },
+      "transform": {
+        "position": [0.27, -10.423964977264404, 2.3]
+      }
+    },
+    {
+      "file": "Material__29_1.vtp",
+      "texture": {
+        "file": "Material__29.jpg"
+      },
+      "action": {
+        "type": "twirl",
+        "rate": 12,
+        "rotation": [0, 0, 1]
+      }
+    },
+    {
+      "file": "Material__29_2.vtp",
+      "texture": {
+        "file": "Material__29.jpg"
+      }
+    },
+    {
+      "file": "Material__30.vtp",
+      "color": [0.34902, 0.313726, 0.262745]
+    },
+    {
+      "file": "Material__32_0.vtp",
+      "texture": {
+        "file": "Material__32.jpg"
+      },
+      "action": {
+        "type": "twirl",
+        "rate": 12,
+        "rotation": [0, 0, 1]
+      }
+    },
+    {
+      "file": "Material__32_1.vtp",
+      "texture": {
+        "file": "Material__32.jpg"
+      }
+    },
+    {
+      "file": "Material__33.vtp",
+      "texture": {
+        "file": "Material__33.jpg"
+      }
+    },
+    {
+      "file": "Material__34.vtp"
+    },
+    {
+      "file": "Material__36_0.vtp",
+      "opacity": 0.43,
+      "color": [0.0470588, 0.447059, 0.133333]
+    },
+    {
+      "file": "Material__36_1.vtp",
+      "opacity": 0.43,
+      "color": [0.0470588, 0.447059, 0.133333]
+    },
+    {
+      "file": "Material__37.vtp",
+      "color": [0.658824, 0.0392157, 0.0392157]
+    },
+    {
+      "file": "streamlines.vtp",
+      "colorBy": {
+        "place": "points",
+        "field": "velocityMag",
+        "range": [9.33e-3, 1.489e-1],
+        "palette": "erdc_rainbow_bright"
+      },
+      "action": {
+        "type": "toggle"
+      }
+    }
+  ],
+  "cameraPositions": [
+    [-4.187, -0.03, -1.06],
+    [-2.71, -3.36952, 1.0499],
+    [-2.79801, -0.639677, 1.24607],
+    [0.259885, 0.0923294, 4.7633],
+    [12.8838, 4.01115, 7.19098],
+    [13.5657, 0.042956, 3.31277],
+    [0.1119362, 0.71522, 2.051421]
+  ],
+  "cameraDirections": [
+    [0.01, -3.147, 0.5229],
+    [0.349262, 0.887734, -0.299907],
+    [-0.963597, 0.14765, -0.15],
+    [0.987236, -0.0671061, -0.144439],
+    [-0.914858, -0.243068, -0.322416],
+    [-0.999279, -0.034066, 0.0167591],
+    [0.855973, -0.259941, -0.446923]
+  ]
+}
