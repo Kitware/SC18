@@ -32,7 +32,7 @@ const disableTouchNext = userParams.disableTouch || false;
 const distk1 = userParams.k1 || 0.2;
 const distk2 = userParams.k2 || 0.0;
 const cameraCenterY = userParams.centerY || 0.0;
-const dataPath = userParams.data || '/uh60';
+const dataPath = userParams.data || '/SC18/uh60';
 let cameraHandle = null;
 
 const body = document.querySelector('body');
