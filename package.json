@@ -1,5 +1,5 @@
 {
-  "name": "Kitware@SC18",
+  "name": "@Kitware/SC18",
   "version": "0.0.0-semantically-release",
   "description": "SuperComputing demos",
   "keywords": [
@@ -18,14 +18,16 @@
   },
   "homepage": "https://github.com/kitware/SC18#readme",
   "dependencies": {
-    "vtk-js": "7.11.0"
+    "vtk.js": "7.11.0"
   },
   "devDependencies": {
-    "kw-doc": "1.2.0",
+    "gh-pages": "2.0.0",
     "kw-web-suite": "6.1.0"
   },
   "scripts": {
-    "reformat": "prettier --config ./prettier.config.js --write \"Sources/**/*.js\" \"Examples/**/*.js\"",
+    "deploy": "gh-pages -d website",
+    "start": "webpack-dev-server --mode development --progress --colors",
+    "reformat": "prettier --config ./prettier.config.js --write \"demos/**/*.js\"",
     "build": "webpack --progress --colors --mode development",
     "build:release": "webpack --progress --colors --mode production",
     "commit": "git cz",
@@ -35,5 +37,5 @@
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"
     }
-  },
+  }
 }

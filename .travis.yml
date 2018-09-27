@@ -1,0 +1,27 @@
+language: node_js
+os: linux
+sudo: required
+dist: trusty
+group: travis_lts
+node_js:
+  - '9.3.0'
+install:
+  - npm ci
+notifications:
+  email:
+    recipients:
+      - sebastien.jourdain@kitware.com
+    on_success: change
+    on_failure: always
+
+cache:
+  directories:
+    - "$HOME/.npm"
+
+script:
+  - git config --global user.name "Travis CI"
+  - git config --global user.email "sebastien.jourdain@kitware.com"
+  - export GIT_PUBLISH_URL=https://${GH_TOKEN}@github.com/Kitware/SC18.git
+  - npm run build:release
+  - cp -r ./data/* ./website/
+  - npm run deploy
