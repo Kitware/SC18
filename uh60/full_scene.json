@@ -216,6 +216,18 @@
     {
       "file": "Material__37.vtp",
       "color": [0.658824, 0.0392157, 0.0392157]
+    },
+    {
+      "file": "streamlines.vtp",
+      "colorBy": {
+        "place": "points",
+        "field": "velocityMag",
+        "range": [9.33e-3, 1.489e-1],
+        "palette": "erdc_rainbow_bright"
+      },
+      "action": {
+        "type": "toggle"
+      }
     }
   ],
   "cameraPositions": [
