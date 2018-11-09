@@ -22,6 +22,9 @@ import {
 } from 'vtk.js/Sources/Rendering/Core/Mapper/Constants';
 
 // ----------------------------------------------------------------------------
+// python -m SimpleHTTPServer 8000
+// http://localhost:8000/website/vr-vtk-js/?data=/data/uh60
+// ----------------------------------------------------------------------------
 
 const userParams = vtkURLExtract.extractURLParameters();
 
@@ -46,6 +49,9 @@ let fullScreenMetod = null;
   }
 );
 
+let objectToLoadCount = 0;
+const actions = [];
+
 // ----------------------------------------------------------------------------
 
 function addPipelineElement(description, addActorToView, resetCamera, getURL) {
@@ -63,6 +69,14 @@ function addPipelineElement(description, addActorToView, resetCamera, getURL) {
     console.log('=> add data', description.file);
     addActorToView(actor);
     resetCamera();
+    objectToLoadCount--;
+
+    // Register all actions at once
+    if (objectToLoadCount === 0) {
+      while (actions.length) {
+        setInterval(...actions.pop());
+      }
+    }
   });
 
   // Apply settings
@@ -85,6 +99,9 @@ function addPipelineElement(description, addActorToView, resetCamera, getURL) {
   }
   if (description.color) {
     actor.getProperty().setColor(...description.color);
+  }
+  if (description.props) {
+    actor.getProperty().set(description.props);
   }
   if (description.colorBy) {
     const scalarMode = ScalarMode.USE_POINT_FIELD_DATA;
@@ -119,11 +136,14 @@ function addPipelineElement(description, addActorToView, resetCamera, getURL) {
   // Handle actions
   if (description.action && description.action.type === 'twirl') {
     const rot = description.action.rotation;
-    setInterval(() => {
-      actor.rotateX(rot[0]);
-      actor.rotateY(rot[1]);
-      actor.rotateZ(rot[2]);
-    }, description.action.rate);
+    actions.push([
+      () => {
+        actor.rotateX(rot[0]);
+        actor.rotateY(rot[1]);
+        actor.rotateZ(rot[2]);
+      },
+      description.action.rate,
+    ]);
   }
 }
 
@@ -222,7 +242,11 @@ function loadScene(scene, basePath) {
 
   const cameraConfiguration = Object.assign(
     {
-      physicalViewNorth: scene.settings.camera.focalPoint,
+      physicalViewNorth: [
+        scene.settings.camera.focalPoint[0] - scene.settings.camera.position[0],
+        scene.settings.camera.focalPoint[1] - scene.settings.camera.position[1],
+        scene.settings.camera.focalPoint[2] - scene.settings.camera.position[2],
+      ],
       physicalViewUp: scene.settings.camera.viewUp,
     },
     scene.settings.camera
@@ -235,7 +259,14 @@ function loadScene(scene, basePath) {
     rightRenderer = vtkRenderer.newInstance({
       background: scene.settings.background,
     });
-    addActorToView = macro.chain(leftRenderer.addActor, rightRenderer.addActor);
+    addActorToView = (a) => {
+      console.log('add both actors');
+      leftRenderer.addActor(a);
+      const rActor = vtkActor.newInstance();
+      rActor.setMapper(a.getMapper());
+      rActor.setProperty(a.getProperty());
+      rightRenderer.addActor(a);
+    };
 
     // Configure left/right renderers
     leftRenderer.setViewport(0, 0, 0.5, 1);
@@ -355,6 +386,7 @@ function loadScene(scene, basePath) {
   // Load objects
   // --------------
 
+  objectToLoadCount = scene.objects.length;
   for (let i = 0; i < scene.objects.length; i++) {
     addPipelineElement(scene.objects[i], addActorToView, resetCamera, getURL);
   }
@@ -362,8 +394,10 @@ function loadScene(scene, basePath) {
   const me = {};
   interactor.requestAnimation(me);
 
-  setInterval(moveToNextPosition, 15000);
-  setInterval(animateCamera, 30);
+  if (cameraPositions.length) {
+    setInterval(moveToNextPosition, 15000);
+    setInterval(animateCamera, 30);
+  }
 
   return { camera, cameraPositions, cameraDirections, updateCameraCallBack };
 }

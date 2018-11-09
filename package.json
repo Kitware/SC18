@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/kitware/SC18#readme",
   "dependencies": {
-    "vtk.js": "7.11.0"
+    "vtk.js": "7.13.2"
   },
   "devDependencies": {
     "gh-pages": "2.0.0",
